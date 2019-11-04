@@ -1,0 +1,13 @@
+[{
+    "id": 1,
+    "title": "New Blog",
+    "subtitle": "mini blog",
+    "content": "This is content, without any paragraph or header tags,within an ion-cardContent element"
+},
+{
+    "id": 2,
+    "title": "New Blog",
+    "subtitle": "mini blog",
+    "content": "This is content, without any paragraph or header tags,within an ion-cardContent element"
+}
+]

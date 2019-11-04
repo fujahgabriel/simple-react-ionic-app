@@ -1,6 +1,5 @@
 {
   "name": "ReactApp",
-  "app_id": "",
-  "type": "react",
-  "integrations": {}
+  "integrations": {},
+  "type": "react"
 }
