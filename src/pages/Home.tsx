@@ -20,7 +20,9 @@ import { RouteComponentProps } from 'react-router';
 const Home: React.FC<RouteComponentProps> = (props) => {
   return (
     <IonPage>
-      
+      <IonToolbar>
+        <IonTitle> My Native App</IonTitle>
+      </IonToolbar>
       <IonContent className="ion-padding">
         React - Ionic
 
@@ -39,7 +41,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
 
         <IonFab vertical="bottom" horizontal="end" slot="fixed">
           <IonFabButton onClick={() => props.history.push('/new')}>
-            <IonIcon icon={add} />
+            Next
           </IonFabButton>
         </IonFab>
 
