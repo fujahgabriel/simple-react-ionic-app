@@ -1,0 +1,8 @@
+{
+  "appId": "com.h24news.app",
+  "appName": "H24News",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "cordova": {}
+}

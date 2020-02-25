@@ -1,8 +1,10 @@
 {
-  "name": "ReactApp",
+  "name": "H24News",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@capacitor/core": "1.4.0",
+    "@capacitor/ios": "^1.4.0",
     "@ionic/react": "^4.11.0",
     "@ionic/react-router": "^4.11.0",
     "@types/jest": "^24.0.18",
@@ -40,8 +42,9 @@
       "last 1 safari version"
     ]
   },
-  "description": "An Ionic project",
+  "description": "A simple news aggregator ionic-react native app",
   "devDependencies": {
+    "@capacitor/cli": "1.4.0",
     "react-scripts": "3.2.0"
   }
 }

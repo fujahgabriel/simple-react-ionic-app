@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import {
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-    IonLoading,
-    IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonIcon, IonItem, IonLabel
-
-} from '@ionic/react';
+import {IonContent,IonHeader,IonPage,IonTitle,IonToolbar,IonLoading,IonButton, IonImg, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle} from '@ionic/react';
 import axios from 'axios';
 interface Blog {
     title: string;
-    subtitle:string;
-    content: string;
+    author: string;
+    description: string;
+    urlToImage: string;
+    url:string;
 }
 const NewItem: React.FC = (props) => {
     const [data, setData] = useState<Blog[]>([]);
@@ -21,27 +14,26 @@ const NewItem: React.FC = (props) => {
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
-                'http://192.168.0.10/reactapi/data.json',
+                'https://newsapi.org/v2/top-headlines?country=gb&apiKey=d55eab2f7e4746cca0d4fef4a94c320d',
             );
-            setData(result.data);
+            setData(result.data.articles);
             setShowLoading(false);
         };
-
         fetchData();
     }, []);
 
     const showDetail = (data: any) => {
         let prop: any = props;
         prop.history.push({
-            pathname: '/tab1/details/' + JSON.stringify(data)
+            pathname: '/details/'+{ "title":'test'}
         })
     }
-
+//+ JSON.stringify(data) onClick={() => showDetail(blog)}
     return (
         <IonPage>
             <IonHeader>
-                <IonToolbar>
-                    <IonTitle>New Item</IonTitle>
+                <IonToolbar  color="primary">
+                    <IonTitle>UK Top Headline News</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>
@@ -51,16 +43,23 @@ const NewItem: React.FC = (props) => {
                     message={'Loading...'}
                 />
                 {data.map((blog, idx) => (
-                <IonCard key={idx}>
-                    <IonCardHeader>
-                        <IonCardSubtitle>{blog.subtitle}</IonCardSubtitle>
-                        <IonCardTitle>{blog.title}</IonCardTitle>
-                    </IonCardHeader>
+                    <IonCard key={idx} >
+                        <IonCardHeader>
 
-                    <IonCardContent>
-                    {blog.content}
-                    </IonCardContent>
-                </IonCard>
+                            <IonImg src={blog.urlToImage} />
+
+                            <IonCardSubtitle>{blog.author}</IonCardSubtitle>
+                            <IonCardTitle>{blog.title}</IonCardTitle>
+                        </IonCardHeader>
+
+                        <IonCardContent>
+                            {blog.description}
+                            <p></p>
+                            <IonButton href={blog.url} slot="end" >
+                                Read More
+                            </IonButton>
+                        </IonCardContent>
+                    </IonCard>
                 ))}
             </IonContent>
         </IonPage>

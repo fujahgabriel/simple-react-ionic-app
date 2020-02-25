@@ -1,5 +1,7 @@
 {
-  "name": "ReactApp",
-  "integrations": {},
+  "name": "H24News",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "react"
 }

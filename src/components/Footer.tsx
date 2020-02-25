@@ -3,11 +3,10 @@ import { IonContent, IonFooter, IonToolbar, IonTitle } from '@ionic/react';
 
 export const Footer: React.FC = () => (
   <>
-    <IonContent />
-
+   
     <IonFooter>
-      <IonToolbar color="tertiary">
-        <IonTitle>(c) 2019</IonTitle>
+      <IonToolbar color="primary">
+        <IonTitle><small>(c) React News App 2020. <br/> Powered By NewsApi.Org</small></IonTitle>
       </IonToolbar>
     </IonFooter>
   </>

@@ -3,21 +3,24 @@ import { IonHeader, IonContent, IonToolbar, IonButtons, IonBackButton, IonTitle 
 
 export const Header: React.FC = () => (
   <>
+  <IonContent>
     <IonHeader>
-      <IonToolbar color="tertiary">
-        <IonButtons slot="start">
-          <IonBackButton mode="ios" defaultHref="/" />
-        </IonButtons>
-        <IonTitle>React App</IonTitle>
+      <IonToolbar color="primary">
+          <IonTitle>Headline News App</IonTitle>
       </IonToolbar>
     </IonHeader>
+    </IonContent>
 
-    <IonContent>
+    
+  </>
+);
+
+/** 
+ * <IonContent>
       <IonHeader collapse="condense">
         <IonToolbar>
           <IonTitle size="large">React App</IonTitle>
         </IonToolbar>
       </IonHeader>
-    </IonContent>
-  </>
-);
+    </IonContent> 
+    */
